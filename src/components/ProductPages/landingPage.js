@@ -93,7 +93,7 @@ function LandingPage() {
        </Backdrop>
         {
           
-          (allPost.length != 0) ?
+          (allPost.length > 0) ?
             allPost.map((elem) => {
               return (
                   
