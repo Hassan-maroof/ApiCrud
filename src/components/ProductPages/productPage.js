@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getSpecificPost } from '../Api/Index';
-import mockup from '../../sahred/mockup.png';
+import mockup from '../../Shared/mockup.png';
 import Card from "material-ui/Card";
 import { makeStyles } from '@material-ui/core/styles';
 import CardActionArea from '@material-ui/core/CardActionArea';

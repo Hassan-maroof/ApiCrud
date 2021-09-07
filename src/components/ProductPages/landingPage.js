@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getAllPost, deleteSpecificPost } from '../Api/Index';
-import mockup from '../../sahred/mockup.png'
+import mockup from '../../Shared/mockup.png'
 import Card from "material-ui/Card";
 import { makeStyles } from '@material-ui/core/styles';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function LandingPage() {
-  const [allPost, setallPost] = useState({});
+  const [allPost, setallPost] = useState([]);
   const [loading , setloading] = useState(false) ;
   useEffect(() => {
     const fetchAPI = async () => {
@@ -93,7 +93,7 @@ function LandingPage() {
        </Backdrop>
         {
           
-          (allPost[0]) ?
+          (allPost.length != 0) ?
             allPost.map((elem) => {
               return (
                   
