@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   cardroot: {
     maxWidth: 345,
-    height: 400,
+    // height: 400,
   },
   control: {
     padding: theme.spacing.unit * 2,
@@ -105,11 +105,11 @@ function LandingPage() {
                       title="Product"
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        {elem.title}
+                      <Typography gutterBottom variant="h5" component="h2" style={{height: 64}}>
+                        {elem.title.length > 30  ? elem.title.substring(0, 30) + ` ...`: elem.title}
                       </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
-                        {elem.body}
+                      <Typography variant="body2" color="textSecondary" component="p"  style={{height: 80}}>
+                        {elem.body.length > 100 ? elem.body.substring(0,100) + '...': elem.body}
                       </Typography>
                     </CardContent>
 

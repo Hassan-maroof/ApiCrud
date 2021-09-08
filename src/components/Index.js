@@ -10,8 +10,6 @@ import { useEffect } from "react";
 function Index() {
   return (
     <div>
-      <header >
-
         <AppBar position="Sticky" >
             <div className="App-bar">
             <h1>Mock-Up</h1>
@@ -29,7 +27,6 @@ function Index() {
           <Route path="/product/:id" component={ProductPage} />
           <Route path="/createPost" component={CreatePost} />
         </Switch>
-      </header>
     </div>
   );
 }
