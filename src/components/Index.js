@@ -1,23 +1,34 @@
 
 import LandingPage from "./ProductPages/landingPage";
 import ProductPage from "./ProductPages/productPage";
-import { AppBar, Toolbar } from "@material-ui/core"
-import {Switch , Route} from 'react-router-dom'
-import DeletePost from "./ProductPages/deletePostPage";
+import { AppBar, Button, Toolbar } from "@material-ui/core"
+import { Switch, Route , Link } from 'react-router-dom'
+
+import CreatePost from "./ProductPages/CreatePost";
+import './Index.css'
 import { useEffect } from "react";
 function Index() {
   return (
     <div>
       <header >
-        
-          <AppBar position="Sticky">
-          <h1>Mock-Up</h1>
-            </AppBar>
-      <Switch>
-        <Route path="/" exact component={LandingPage} />
-        <Route path="/product/:id" component={ProductPage} />
-        <Route path="/Delete/:id" component={DeletePost} />
-      </Switch>
+
+        <AppBar position="Sticky" >
+            <div className="App-bar">
+            <h1>Mock-Up</h1>
+            <div className='App-button'>
+            <Link to = {`/createPost`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
+            <Button fullWidth= {false} size="small" variant="contained" >
+              Create Post
+            </Button>
+            </Link>
+            </div>
+            </div>
+        </AppBar>
+        <Switch>
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/product/:id" component={ProductPage} />
+          <Route path="/createPost" component={CreatePost} />
+        </Switch>
       </header>
     </div>
   );

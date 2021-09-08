@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary
   },
-  end:{
+  end: {
     alignSelf: "end",
   },
   backdrop: {
@@ -55,10 +55,10 @@ const useStyles = makeStyles((theme) => ({
 
 function LandingPage() {
   const [allPost, setallPost] = useState([]);
-  const [loading , setloading] = useState(false) ;
+  const [loading, setloading] = useState(false);
   useEffect(() => {
     const fetchAPI = async () => {
-      setloading(true) ;
+      setloading(true);
       const fetchAllpost = await getAllPost();
       setallPost(fetchAllpost.data);
       console.log('', allPost);
@@ -69,7 +69,7 @@ function LandingPage() {
   }, []);
   useEffect(() => {
     console.log(allPost);
-    if(allPost[0]){
+    if (allPost[0]) {
       setloading(false);
     }
 
@@ -87,45 +87,46 @@ function LandingPage() {
   const classes = useStyles();
   return (
     <div className={classes.root} >
-      <Grid container spacing={5} justifyContent='center'  className="container">
-      <Backdrop className={classes.backdrop} open={loading}  >
-         <CircularProgress color="inherit" />
-       </Backdrop>
+      <Grid container spacing={5} justifyContent='center' className="container">
+        <Backdrop className={classes.backdrop} open={loading}  >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+
         {
-          
+
           (allPost.length > 0) ?
             allPost.map((elem) => {
               return (
-                  
-                  <Grid item xs={15}>
-                    <Paper className={classes.cardroot}>
-                        <CardMedia className={classes.cardmedia}
-                          image={mockup}
-                          title="Product"
-                        />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            {elem.title}
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            {elem.body}
-                          </Typography>
-                        </CardContent>
-                      
-                      <CardActions style={{justifyContent:"space-between"  }} className ={classes.end} >
-                        <Link to={`/product/${elem.userId}`} >
-                          <Button size="small" color="primary">
-                            Learn More
-                          </Button>
-                        </Link>
 
-                        <IconButton size="small" color="primary" onClick={() => DeletePostReq(elem.id)}>
-                          <DeleteIcon/>
-                        </IconButton>
-                      </CardActions>
-                    </Paper>
-                  </Grid>
-               
+                <Grid item xs={15}>
+                  <Paper className={classes.cardroot}>
+                    <CardMedia className={classes.cardmedia}
+                      image={mockup}
+                      title="Product"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {elem.title}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary" component="p">
+                        {elem.body}
+                      </Typography>
+                    </CardContent>
+
+                    <CardActions style={{ justifyContent: "space-between" }} className={classes.end} >
+                      <Link to={`/product/${elem.userId}`} >
+                        <Button size="small" color="primary">
+                          Learn More
+                        </Button>
+                      </Link>
+
+                      <IconButton size="small" color="primary" onClick={() => DeletePostReq(elem.id)}>
+                        <DeleteIcon />
+                      </IconButton>
+                    </CardActions>
+                  </Paper>
+                </Grid>
+
               );
             }) : null
         }

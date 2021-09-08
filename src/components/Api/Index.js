@@ -32,3 +32,21 @@ export const getAllPost = async () => {
       return error;
     }
   };
+
+
+
+  export const createPost = async (title,body) => {
+    console.log("title",title) ;
+    console.log("body", body);
+    console.log("url",url)
+    try {
+      return await axios.post(url,JSON.stringify({
+        title: {title},
+        body: {body},
+        userId: 1,
+      }));
+      
+    } catch (error) {
+      return error;
+    }
+  };
