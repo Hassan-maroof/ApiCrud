@@ -2,3 +2,11 @@
     margin-top: 1% !important;
     width: 100% !important;
 }
+
+.postcontainer {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-right: 10%;
+    padding-left: 10%;
+}

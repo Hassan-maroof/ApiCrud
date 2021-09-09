@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getAllPost, deleteSpecificPost } from '../Api/Index';
 import mockup from '../../Shared/mockup.png'
-import Card from "material-ui/Card";
 import { makeStyles } from '@material-ui/core/styles';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -22,8 +19,7 @@ import './landingPage.css';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    
   },
   paper: {
     height: 140,
