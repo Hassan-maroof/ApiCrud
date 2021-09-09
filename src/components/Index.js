@@ -12,7 +12,7 @@ function Index() {
     <div>
         <AppBar position="Sticky" >
             <div className="App-bar">
-            <h1>Mock-Up</h1>
+            <h1>Air-Mail</h1>
             <div className='App-button'>
             <Link to = {`/createPost`} style={{ color: 'inherit', textDecoration: 'inherit'}}>
             <Button fullWidth= {false} size="small" variant="contained" >

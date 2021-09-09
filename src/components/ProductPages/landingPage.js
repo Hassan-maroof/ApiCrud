@@ -95,7 +95,9 @@ function LandingPage() {
               return (
 
                 <Grid item xs={15}>
+                  
                   <Paper className={classes.cardroot}>
+                  <Link to={`/product/${elem.userId}`}  style={{ color: 'inherit', textDecoration: 'inherit'}}>
                     <CardMedia className={classes.cardmedia}
                       image={mockup}
                       title="Product"
@@ -108,7 +110,7 @@ function LandingPage() {
                         {elem.body.length > 100 ? elem.body.substring(0,100) + '...': elem.body}
                       </Typography>
                     </CardContent>
-
+                    </Link >
                     <CardActions style={{ justifyContent: "space-between" }} className={classes.end} >
                       <Link to={`/product/${elem.userId}`} >
                         <Button size="small" color="primary">
@@ -121,6 +123,7 @@ function LandingPage() {
                       </IconButton>
                     </CardActions>
                   </Paper>
+                  
                 </Grid>
 
               );
